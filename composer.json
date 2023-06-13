@@ -1,0 +1,10 @@
+{
+    "name": "a.polikarpov/mvc.local",
+    "description": "MVC authentication",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}
