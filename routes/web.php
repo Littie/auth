@@ -22,3 +22,6 @@ $this->get('/home', 'App\Controller\HomeController@index');
 
 /** @uses \App\Controller\MainController */
 $this->get('/', 'App\Controller\MainController@index');
+
+/** @uses \App\Controller\LogoutController */
+$this->get('/logout', 'App\Controller\LogoutController@index');

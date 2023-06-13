@@ -12,7 +12,7 @@
     <div class="row d-flex justify-content-center align-items-center">
         <h2 class="text-center">Registration Form</h2>
         <div class="col-md-4">
-            <form method="POST" action="http://localhost:8000/signup">
+            <form method="POST" action="http://localhost:8080/signup">
                 <div class="mb-3">
                     <label for="firstName" class="form-label">First Name</label>
                     <input type="text" class="form-control" id="firstName" name="firstName">

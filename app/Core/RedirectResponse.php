@@ -26,6 +26,13 @@ class RedirectResponse implements ResponseInterface
         return $this;
     }
 
+    public function deleteCookie(string $name): self
+    {
+        setcookie($name, '', time()-3600);
+
+        return $this;
+    }
+
     public function send(): void
     {
         $this->sendHeaders();

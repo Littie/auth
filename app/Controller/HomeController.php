@@ -10,6 +10,7 @@ use App\Core\View;
 use App\Repository\DBUserRepository;
 use App\Repository\UserRepositoryInterface;
 use App\Core\Interfaces\Response as ResponseInterface;
+use App\Service\AuthService;
 
 /**
  * Class HomeController
@@ -27,15 +28,20 @@ class HomeController
 
     public function index(Request $request): ResponseInterface
     {
-        $cookies = $request->getCookies();
+        $authService = new AuthService($request);
 
-        if (isset($cookies['token'])) {
-            $user = $this->userRepository->findByToken($cookies['token']);
-
-            if (null !== $user) {
-                return new Response(View::make('home'));
-            }
+        if ($authService->isAuthorized()) {
+            return new Response(View::make('home'));
         }
+//        $cookies = $request->getCookies();
+//
+//        if (isset($cookies['token'])) {
+//            $user = $this->userRepository->findByToken($cookies['token']);
+//
+//            if (null !== $user) {
+//                return new Response(View::make('home'));
+//            }
+//        }
 
         return new RedirectResponse('/');
     }

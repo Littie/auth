@@ -15,12 +15,13 @@ class RegistrationModel extends Model
     protected string $email;
     protected string $phone;
     protected string $password;
+    protected string $encryptedPassword;
 
     protected function rules(): array
     {
         return [
             'email' => ['required' => 'Email is required'],
-            'password' => ['required' => 'Password is required']
+            'password' => ['required' => 'Password is required'],
         ];
     }
 
@@ -46,6 +47,10 @@ class RegistrationModel extends Model
 
     public function getPassword(): string
     {
-        return \password_hash($this->password, PASSWORD_DEFAULT);
+        if (empty($this->encryptedPassword)) {
+            $this->encryptedPassword = \password_hash($this->password, PASSWORD_DEFAULT);
+        }
+
+        return $this->encryptedPassword;
     }
 }

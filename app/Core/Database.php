@@ -17,7 +17,7 @@ class Database
     public function __construct()
     {
         try {
-            $this->pdo = new \PDO('mysql:host=localhost;dbname=mvc.local', 'root', 'fenix13071706');
+            $this->pdo = new \PDO('mysql:host=mysql;dbname=mvc.local', 'root', 'secret');
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (\Exception $e) {
             echo $e->getMessage();

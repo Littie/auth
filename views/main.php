@@ -11,7 +11,7 @@
 <div class="container mt-3">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="http://localhost:8000/login">Login</a>
+            <a class="navbar-brand" href="http://localhost:8080/login">Login</a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -23,7 +23,7 @@
             >
                 <i class="fas fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="http://localhost:8000/register">Register</a>
+            <a class="navbar-brand" href="http://localhost:8080/register">Register</a>
             <button
                 class="navbar-toggler"
                 type="button"

@@ -41,7 +41,6 @@ class SignupController
 
         $user = $this->userRepository->create($registrationModel);
 
-        // Return with params
-        return new RedirectResponse('/home');
+        return (new RedirectResponse('/home'))->setCookie('token', $registrationModel->getPassword());
     }
 }
